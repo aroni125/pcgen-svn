@@ -1,0 +1,5 @@
+# CVS $Revision$ $Author$ -- Wed Jan 14 13:16:52 2009 -- reformated by prettylst.pl v1.38 (build 8180)
+SOURCELONG:Sellout! Sourcebook	SOURCESHORT:Sellout	SOURCEWEB:http://www.pandahead.com/Xcrawl/index.php
+
+# Template Name	Visible	Required Feat		Favored Class		Type
+BornAthlete		VISIBLE:NO	PREFEAT:1,Born Athlete	FAVOREDCLASS:Athlete	TYPE:SPECIAL

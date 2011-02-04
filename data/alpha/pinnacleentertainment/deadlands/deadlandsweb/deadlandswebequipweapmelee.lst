@@ -1,0 +1,7 @@
+# CVS $Revision$ $Author$ -- Sat May 17 17:46:58 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+SOURCELONG:Deadlands Web Enhancements	SOURCESHORT:DeadlndWeb	SOURCEWEB:http://www.peginc.com
+
+#Simple Weapons Melee
+# Equipment Name	Type							Cost		Weight	Critical Hit Multiplier	Critical Hit Range	Damage	Size		Source URI											Bonus to skill
+Club (Stone)	TYPE:Weapon.Simple.Melee.Bludgeoning	COST:80	WT:10		CRITMULT:x2			CRITRANGE:1			DAMAGE:2d8	SIZE:L	SOURCEWEB:http://www.peginc.com/WeirdWest/Support/Adventures/HotWW	BONUS:SKILL|Spot|2
+#Pricing: Skill Bonus ((2 squared) x 20) = 80

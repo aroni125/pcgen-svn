@@ -1,0 +1,114 @@
+
+# COMMENT: Do not ADD USEUNTRAINED:YES Skills, they will alter Alice, Bob and Charlie's test suites.
+
+
+
+
+Test59		USEUNTRAINED:NO	TYPE:Test	BONUS:SKILLRANK|Test59b|skillinfo("TOTAL","Test59")
+Test59b		USEUNTRAINED:NO	TYPE:Test
+
+
+Test59a		USEUNTRAINED:NO	TYPE:Test	BONUS:SKILLRANK|Test59c|skillinfo("TOTAL","Test59a")|PRECLASS:1,Test Nothing=4
+Test59c		USEUNTRAINED:NO	TYPE:Test
+
+
+# Bug Code 453
+TestMasterSkill	USEUNTRAINED:NO	TYPE:ClassSkill		BONUS:SKILLRANK|TestSubSkill|skillinfo("TOTAL","TestMasterSkill")
+TestSubSkill	USEUNTRAINED:NO	TYPE:Test	CLASSES:ALL
+
+
+Athletics.MOD	BONUS:SKILL|Athletics (Jump)|max(floor((var("MOVE[Walk]")-30)/10)*4,0)|TYPE=Speed.STACK	
+Athletics.MOD	BONUS:SKILL|Athletics (Jump)|min(ceil((var("MOVE[Walk]")-30)/10)*6,0)|TYPE=Speed.STACK	
+Athletics.MOD	BONUS:SKILL|Acrobatics|SynergyBonus|PRESKILL:1,Althetics=5|TYPE=Synergy.STACK		
+Athletics.MOD	BONUS:SKILL|Athletics (Jump)|skillinfo("MODIFIER","Athletics")
+Athletics.MOD	BONUS:SKILLRANK|Athletics (Jump)|skillinfo("TOTALRANK","Athletics")|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREMULT:1,[PREVARGT:skillinfo("TOTAL","Athletics (Jump)"),skillinfo("TOTAL","Athletics")],[PREVARNEQ:skillinfo("MODIFIER","Athletics (Jump)"),skillinfo("MODIFIER","Athletics")]	
+
+
+Athletics (Jump)	KEYSTAT:STR	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	
+#VISIBLE:EXPORT
+
+
+#
+Test Skill	TYPE:HiddenSkill	USEUNTRAINED:NO
+
+Climb.MOD		BONUS:SKILL|Test Skill|skillinfo("TOTAL", "Climb")|TYPE=NoStacking
+
+
+
+
+
+
+###Skill
+Test Crafting			KEYSTAT:DEX
+Craft (One)				KEYSTAT:DEX	TYPE:Craft
+Craft (Two)				KEYSTAT:DEX	TYPE:Craft
+Monkey Building Sensation	KEYSTAT:CHA	TYPE:MonFoo
+Test Coding Script		KEYSTAT:INT	TYPE:Intelligence
+Poetry				KEYSTAT:CHA	TYPE:Charisma.Performance.Poetry
+
+#Conditional Skills
+Uber Scripting from five ranks in Test Coding Script		KEYSTAT:INT	BONUS:SKILL|Uber Scripting from five ranks in Test Coding Script|CHA	BONUS:SKILLRANK|Uber Scripting from five ranks in Test Coding Script|SKILLRANK=Poetry
+Poetry Recitation Specialty						KEYSTAT:CHA	
+
+Monkey Building			
+
+Linguistics				TYPE:TestSkills			
+
+Test Skill (Class Level)	TYPE:ClassLevelTest	CHOOSE:SKILL|ALL
+Test Skill (Sub)			TYPE:Test							USEUNTRAINED:NO	KEY:Test Skill_Sub
+
+# Test Skills
+Athletics			KEYSTAT:STR	TYPE:Strength.TestSkills
+Acrobatics			KEYSTAT:DEX	TYPE:Dexterity.TestSkills
+Combat Focus		KEYSTAT:CON	TYPE:Constitution.TestSkills
+Knowledge			KEYSTAT:INT	TYPE:Intelligence.TestSkills
+Perception			KEYSTAT:WIS	TYPE:Wisdom.Perception.TestSkills
+Persuasion			KEYSTAT:CHA	TYPE:Charisma.TestSkills
+
+Survival			KEYSTAT:WIS	USEUNTRAINED:NO
+Stealth			KEYSTAT:DEX	TYPE:Dexterity.TestSkills
+
+Climb			KEYSTAT:STR	USEUNTRAINED:NO
+Intimidate		KEYSTAT:WIS	USEUNTRAINED:NO
+Listen		KEYSTAT:WIS	USEUNTRAINED:NO
+Search		KEYSTAT:INT	USEUNTRAINED:NO
+Spot			KEYSTAT:WIS	USEUNTRAINED:NO
+
+
+
+Ability Skill 1		USEUNTRAINED:NO	
+Ability Skill 2		USEUNTRAINED:NO
+Ability Skill 3		USEUNTRAINED:NO
+Ability Skill 4		USEUNTRAINED:NO
+
+Domain Skill 1		USEUNTRAINED:NO
+Domain Skill 2		USEUNTRAINED:NO
+Domain Skill 3		USEUNTRAINED:NO
+
+Other Skill 1		USEUNTRAINED:NO	CLASSES:Alice Class
+Other Skill 2		USEUNTRAINED:NO	CLASSES:Alice Class
+
+Class Skill 1		USEUNTRAINED:NO
+Class Skill 2		USEUNTRAINED:NO
+
+Add Feat Skill		USEUNTRAINED:NO	ADD:FEAT|Add Feat Skill	CLASSES:ALL
+
+# Test Sub Skills Section
+
+
+# Alice Test Skills
+Exclusing Skill_1		KEYSTAT:INT	EXCLUSIVE:YES	TYPE:ExclusiveSkill
+Exclusing Skill_2		KEYSTAT:INT	EXCLUSIVE:YES	TYPE:ExclusiveSkill
+Exclusing Skill_3		KEYSTAT:INT	EXCLUSIVE:YES	TYPE:ExclusiveSkill
+Exclusing Skill_4		KEYSTAT:INT	EXCLUSIVE:YES	TYPE:ExclusiveSkill
+Exclusing Skill_5		KEYSTAT:INT	EXCLUSIVE:YES	TYPE:ExclusiveSkill
+
+Test Skill Chooser_1	KEYSTAT:WIS				TYPE:ChooserTestingSkill
+Test Skill Chooser_2	KEYSTAT:WIS				TYPE:ChooserTestingSkill
+Test Skill Chooser_3	KEYSTAT:WIS				TYPE:ChooserTestingSkill
+Test Skill Chooser_4	KEYSTAT:WIS				TYPE:ChooserTestingSkill
+Test Skill Chooser_5	KEYSTAT:WIS				TYPE:ChooserTestingSkill
+
+
+Ride		USEUNTRAINED:NO
+Tumble	USEUNTRAINED:NO

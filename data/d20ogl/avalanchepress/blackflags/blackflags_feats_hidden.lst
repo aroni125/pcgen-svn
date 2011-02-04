@@ -1,0 +1,7 @@
+# CVS $Revision$ $Author$ -- Mon Feb  2 23:32:28 2009 -- reformated by prettylst.pl v1.39 (build 9132)
+SOURCELONG:Avalanche Press - Black Flags - Piracy in the Caribbean	SOURCESHORT:BlackFlags	SOURCEWEB:http://www.avalanchepress.com
+# Original Entry by: Tir Gwaith
+
+# Feat Name				Type			Visible	Automatically Gained Weapon Prof.
+Noble Weapon Proficiencies	TYPE:Special	VISIBLE:NO	AUTO:WEAPONPROF|Rapier|Dagger
+Captain Weapon Proficiencies	TYPE:Special	VISIBLE:NO	AUTO:WEAPONPROF|TYPE=Sword

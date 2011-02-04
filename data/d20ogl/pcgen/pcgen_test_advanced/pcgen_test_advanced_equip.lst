@@ -1,0 +1,31 @@
+#Equip
+Test Equipment	TYPE:CODE433		ABILITY:Any Feat Choice|VIRTUAL|AFC 1	ABILITY:Any Feat Choice|AUTOMATIC|AFC 2
+
+Torch		TYPE:Goods
+Lantern	TYPE:Goods.Lightsource.Latern
+
+Item Test 42	TYPE:Goods		ABILITY:FEAT|VIRTUAL|Weapon Focus(Longsword)|PRELEVEL:MIN=4
+Item Test 42 2	TYPE:Goods		ABILITY:FEAT|VIRTUAL|Weapon Focus(Longsword)|PRELEVEL:MAX=4
+# Weapons
+Fine Wine Blade		PROFICIENCY:WEAPON|Fine Wine Blade			TYPE:Weapon.Melee.Sword	DAMAGE:d6	CRITMULT:x3	CRITRANGE:1	WIELD:Light
+Light Blades		PROFICIENCY:WEAPON|Light Blades			TYPE:Weapon.Melee.Sword	DAMAGE:d6	CRITMULT:x3	CRITRANGE:1	WIELD:Light
+Suns Weapon Of Choice	PROFICIENCY:WEAPON|Suns Weapon Of Choice		TYPE:Weapon.Melee.Sword	DAMAGE:d6	CRITMULT:x3	CRITRANGE:1	WIELD:OneHanded
+Uber Sword			PROFICIENCY:WEAPON|Uber Sword				TYPE:Weapon.Melee.Sword	DAMAGE:3d6	CRITMULT:x3	CRITRANGE:1	WIELD:TwoHanded
+Cool Sword			PROFICIENCY:WEAPON|Cool Sword				TYPE:Weapon.Melee.Sword	DAMAGE:3d6	CRITMULT:x3	CRITRANGE:1	WIELD:TwoHanded
+Longsword			PROFICIENCY:WEAPON|Longsword				TYPE:Weapon.Melee.Sword	DAMAGE:1d8	CRITMULT:x2	CRITRANGE:1	WIELD:OneHanded
+
+
+# Armor Basic Test
+Medium Armor		PROFICIENCY:ARMOR|Medium				TYPE:Armor.Medium			BONUS:COMBAT|AC|2|TYPE=Armor
+Leather			PROFICIENCY:ARMOR|Leather				TYPE:Armor.Light.Leather	BONUS:COMBAT|AC|2|TYPE=Armor
+Moon Cloth			PROFICIENCY:ARMOR|Moon Cloth				TYPE:Armor.Light.Moon Cloth	BONUS:COMBAT|AC|2|TYPE=Armor
+Heavy Armor			PROFICIENCY:ARMOR|Heavy					TYPE:Armor.Heavy			BONUS:COMBAT|AC|2|TYPE=Armor	
+Light Armor			PROFICIENCY:ARMOR|Light					TYPE:Armor.Light			BONUS:COMBAT|AC|2|TYPE=Armor
+
+# Shield Basic Test
+Light Shield		PROFICIENCY:SHIELD|Light				TYPE:Shield.Light			BONUS:COMBAT|AC|2|TYPE=Shield
+Buckler Shield		PROFICIENCY:SHIELD|Light				TYPE:Shield.Light			BONUS:COMBAT|AC|2|TYPE=Shield
+Heavy Shield		PROFICIENCY:SHIELD|Heavy				TYPE:Shield.Heavy			BONUS:COMBAT|AC|2|TYPE=Shield
+
+Test Equip Feat		TYPE:FeatTestEquip.Any.Misc		ADD:FEAT|Add Feat Equip
+

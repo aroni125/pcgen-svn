@@ -1,0 +1,30 @@
+# CVS $Revision$ $Author$ -- Sat May 17 17:46:58 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+SOURCELONG:System Reference Document	SOURCESHORT:SRD	SOURCEWEB:http://groups.yahoo.com/group/pcgen/files/3.0%20SRD/
+
+#Light
+# Armor Name
+Padded
+Leather
+Studded Leather
+Chain Shirt
+
+#Medium
+Hide
+Scale Mail
+Chainmail
+Breastplate
+
+#Heavy
+Splint Mail
+Banded Mail
+Half-Plate
+Full Plate
+
+# Barding
+Barding (Light)
+Barding (Medium)
+Barding (Heavy)
+
+#
+# End
+#

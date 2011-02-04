@@ -1,0 +1,168 @@
+
+
+AFC 1		TYPE:TestingVirtualAddition
+AFC 2		TYPE:TestingVirtualAddition
+
+A-Test Choose Class PC		TYPE:Test	CHOOSE:CLASS|PC			MULT:YES
+A-Test Choose Class Base	TYPE:Test	CHOOSE:CLASS|TYPE=Base		MULT:YES
+
+#TEST-53
+#Ability (can be feat):
+TargetedAbility ~ WeaponProf	TYPE:TEST-53	CHOOSE:WEAPONPROFICIENCY|ANY	MULT:YES	VFEAT:Weapon Focus(%LIST)
+
+
+
+
+
+Test-xx Spell Level 2 Divine Test	PRESPELLTYPE:1,Divine=2	TYPE:Test-xx	
+Test-xx Spell Level 1 Divine Test	PRESPELLTYPE:1,Divine=1	TYPE:Test-xx	
+Test-xx Spell Level 0 Divine Test	PRESPELLTYPE:1,Divine=0	TYPE:Test-xx	
+
+Test-xx Spell Level 2 Arcane Test	PRESPELLTYPE:1,Arcane=2	TYPE:Test-xx	
+Test-xx Spell Level 1 Arcane Test	PRESPELLTYPE:1,Arcane=1	TYPE:Test-xx	
+Test-xx Spell Level 0 Arcane Test	PRESPELLTYPE:1,Arcane=0	TYPE:Test-xx	
+
+Test-xx Spell Level 2 Psionic Test	PRESPELLTYPE:1,Psionic=2	TYPE:Test-xx	
+Test-xx Spell Level 1 Psionic Test	PRESPELLTYPE:1,Psionic=1	TYPE:Test-xx	
+Test-xx Spell Level 0 Psionic Test	PRESPELLTYPE:1,Psionic=0	TYPE:Test-xx	
+
+
+
+
+Test-88 Weapon Proficiency		TYPE:TEST	AUTO:WEAPONPROF|%LIST	MULT:YES	CHOOSE:WEAPONPROFICIENCY|ALL
+Test-88 Armor Proficiency		TYPE:TEST	AUTO:ARMORPROF|%LIST	MULT:YES	CHOOSE:ARMORPROFICIENCY|ALL
+
+
+Application Test-43-A	TYPE:Test43	TEMPLATE:Test-43-A
+
+Application Test-43-B	TYPE:Test43	TEMPLATE:Test-43-B
+
+Application Test-43-C		TYPE:Test43	TEMPLATE:Test-43-C
+
+Test-43-Master		TYPE:Test43	ABILITY:FEAT|VIRTUAL|Application Test-43-A|PRELEVEL:MAX=2	ABILITY:FEAT|VIRTUAL|Application Test-43-B|PRELEVEL:MAX=3	ABILITY:FEAT|VIRTUAL|Application Test-43-C|PRELEVEL:MAX=4
+
+
+###Add Stuff
+Add Feat Ability			TYPE:Test
+Add Feat Race			TYPE:Test
+Add Feat Deity			TYPE:Test
+Add Feat Domain			TYPE:Test
+Add Feat Skill			TYPE:Test
+Add Feat Template			TYPE:Test
+Add Feat CompanionMod		TYPE:Test
+Add Feat Master Bonus Race	TYPE:Test
+Add Feat Class Line		TYPE:Test
+Add Feat Class Level		TYPE:Test
+
+
+Add Feat Equipmod			TYPE:Test
+Add Feat Equip			TYPE:Test
+Add Feat PCC			TYPE:Test
+#
+#Class - part of the ADD:CLASSSKILLS test
+#Class Level - Part of the 
+
+Test Spells of Sorcerer vs. Bard	TYPE:OutsiderTest	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=YES]	MULT:YES
+# Fails - leaks over.
+#
+Bonus PCLEVEL Wizard 10				TYPE:OutsiderTest	BONUS:PCLEVEL|Wizard|10
+Choose Wizard				TYPE:OutsiderTest	CHOOSE:SPELLLEVEL|Wizard|1|MAXLEVEL	SELECT:1	MULT:YES
+
+Bonus PCLEVEL Base 10				TYPE:OutsiderTest	BONUS:PCLEVEL|TYPE=Base|10
+Choose Base					TYPE:OutsiderTest	CHOOSE:SPELLLEVEL|Wizard|1|MAXLEVEL	SELECT:1	MULT:YES
+
+Bonus PCLEVEL Arcane 10				TYPE:OutsiderTest	BONUS:PCLEVEL|TYPE=Arcane|10
+Choose Arcane		TYPE:OutsiderTest	CHOOSE:SPELLLEVEL|Wizard|1|MAXLEVEL	SELECT:1	MULT:YES
+
+Choose Arcane w lock		TYPE:OutsiderTest	CHOOSE:SPELLLEVEL|Wizard|1|MAXLEVEL	SELECT:1	MULT:YES
+
+#Then try this with <blah> being TYPE=y where Y is a type defined in the TYPE: token of the Class (must not be Arcane, Divine or the same as the SPELLTYPE: token in the Class)
+
+#Lastly, try this with <blah> being TYPE=z where Z is a type defined in the SPELLTYPE token of the Class.
+
+#I'm not sure at all that the behavior is (a) consistent [don't think so] (b) correct when TYPE is used in the BONUS (seems to refer to SPELLTYPE not TYPE - though this seems to at least be how it is documented)
+
+
+
+a Choose Armor Prof Test	TYPE:Test	CHOOSE:ARMORPROFICIENCY|ALL		MULT:YES	AUTO:ARMORPROF|%LIST
+
+a Choose Shield Prof Test	TYPE:Test	CHOOSE:SHIELDPROFICIENCY|ALL	MULT:YES	AUTO:SHIELDPROF|%LIST
+
+#A test Movement ~ MOVEMULT			TYPE:Test		BONUS:MOVEMULT|TYPE=Walk|2.5
+#A test Movement ~ MOVEMULT formula		TYPE:Test		BONUS:MOVEMULT|TYPE=Walk|1/2
+
+
+#A test Movement ~ MOVECLONE			TYPE:Test		MOVECLONE:Walk,Fly,*2.5
+#A test Movement ~ MOVECLONE formula		TYPE:Test		MOVECLONE:Walk,Fly,*1/2
+
+#A Add Spells					TYPE:Test		SPELLLEVEL:CLASS|Druid=1|Magic Missile
+
+
+
+DodgeBall	TYPE:TestMonkey
+MonkeyFu	TYPE:TestMonkey
+
+
+ABonusFeat	TYPE:TestMonkey
+
+
+
+Dodge			TYPE:TestMonkey
+Not Dodge			TYPE:TestMonkey
+Test Case Extreme			TYPE:TestMonkey.Fighter
+Toughness				TYPE:TestMonkey.Fighter	MULT:YES	STACK:YES	CHOOSE:NOCHOICE	BONUS:HP|CURRENTMAX|3
+
+Choose No Choice		TYPE:TestMonkey.Chooser		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	STACK:YES
+Choose String Stack Yes		TYPE:TestMonkey.Chooser		MULT:YES	CHOOSE:STRING|Choice 1|Choice 2|Choice 3	STACK:YES
+Choose String Stack No		TYPE:TestMonkey.Chooser		MULT:YES	CHOOSE:STRING|Choice 1|Choice 2|Choice 3	STACK:NO
+
+###Block: How to Break a PC
+Feat G	TYPE:ATest
+
+Agile					TYPE:General
+
+
+
+# Copies from RSRD set
+
+Armor Proficiency (Heavy)								TYPE:General																																PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]																																DESC:See Text																																AUTO:ARMORPROF|ARMORTYPE=Heavy																																																																																																																																																		SOURCEPAGE:Feats.rtf
+Armor Proficiency (Light)								TYPE:General																																																																													DESC:See Text																																AUTO:ARMORPROF|ARMORTYPE=Light																																																																																																																																																		SOURCEPAGE:Feats.rtf
+Armor Proficiency (Medium)								TYPE:General																																PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]																																DESC:See Text																																AUTO:ARMORPROF|ARMORTYPE=Medium																																																																																																																																																		SOURCEPAGE:Feats.rtf
+
+Simple Weapon Proficiency								TYPE:General																																																																													DESC:See Text																																																		AUTO:WEAPONPROF|TYPE=Simple																																																																																																																																	SOURCEPAGE:Feats.rtf
+Martial Weapon Proficiency								TYPE:General																																																																													DESC:See Text			MULT:YES	CHOOSE:PROFICIENCY|WEAPON|UNIQUE|TYPE.Martial																																						AUTO:WEAPONPROF|%LIST																																																																																																																																		SOURCEPAGE:Feats.rtf
+Exotic Weapon Proficiency								TYPE:General.Fighter					PREATT:1																																																																						DESC:See Text			MULT:YES	CHOOSE:PROFICIENCY|WEAPON|UNIQUE|TYPE.Exotic																																						AUTO:WEAPONPROF|%LIST																																																																																																																																		SOURCEPAGE:Feats.rtf
+
+
+
+Weapon Finesse										TYPE:General.Fighter					PREATT:1																																																																						DESC:See Text																																																																												BONUS:COMBAT|TOHIT.Finesseable|(max(STR,DEX+SHIELDACCHECK)-STR)|TYPE=NotRanged																																																																																														SOURCEPAGE:Feats.rtf
+Weapon Focus										TYPE:General.Fighter					PREATT:1																																																																						DESC:See Text			MULT:YES	CHOOSE:WEAPONPROFS|LIST																																																																																																																																																				BONUS:WEAPONPROF=%LIST|TOHIT|1																						SOURCEPAGE:Feats.rtf
+Weapon Specialization									TYPE:Special.Fighter																	PREFEAT:1,Weapon Focus																																			PREVARGTEQ:WeapSpecQualify,1																	DESC:See Text			MULT:YES	CHOOSE:FEAT=Weapon Focus																																																																																																																																																			BONUS:WEAPONPROF=%LIST|DAMAGE|2																						SOURCEPAGE:Feats.rtf
+
+
+
+Bob Test Feat Choose Spells Monkee							TYPE:General.Tests.BobTest		CHOOSE:SPELLS|CLASSLIST=MonKee[LEVELMIN=1;LEVELMAX=3]					MULT:YES
+Bob Test Feat Choose Spelllevel Arcane						TYPE:General.Tests.BobTest		CHOOSE:SPELLLEVEL|1|TYPE=Arcane|0|MAXLEVEL[BONUS:SPELLCAST|CLASS=%;LEVEL=%|1]	MULT:YES
+
+Bob Testing Type Group A								TYPE:GroupA		DESC:Freebie to Add B
+Bob Testing Type Group B								TYPE:GroupB		DESC:B added by A
+
+Bob Testing Type Group C								TYPE:GroupC		DESC:Triggered by having PREFEAT TYPE=GroupB which is found in Bob Testing Type Group B which is triggered by TYPE=Sword in Weapon Focus.
+
+Bob Weapon Prof Chooser which Grants Weapon	KEY:Bob Feat	TYPE:General.Bob	AUTO:WEAPONPROF|%LIST	CHOOSE:WEAPONPROFICIENCY|ALL	MULT:YES
+
+# Test-27 Spells Identical
+Spell Test ~ 30			TYPE:Test27		SPELLS:Innate|TIMES=30|CASTERLEVEL=30|Magic Missile,30
+#DC, Times/Day, CasterLevel, Times
+
+
+
+
+
+Grant Auto Feat	TYPE:TestFeat	AUTO:FEAT|Toughness
+
+
+# Test 63 Feats
+Test63a	TYPE:TEST-63	CHOOSE:STRING|One|Two		MULT:YES	STACK:NO
+Test63b	TYPE:TEST-63	CHOOSE:STRING|One|Two		MULT:YES	STACK:YES
+Test63c	TYPE:TEST-63	CHOOSE:NOCHOICE			MULT:YES	STACK:YES
