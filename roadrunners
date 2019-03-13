@@ -1,0 +1,147 @@
+
+11,827 code results
+@javelinjake
+javelinjake/star-wars – Starships.vue
+Showing the top two matches
+Last indexed on Aug 2, 2018
+Vue
+<template>
+    <div class="content">
+      <h1>
+        All Starships
+      </h1>
+      <div v-if="loading">
+      <ul class="list-unstyled flex-grid">
+        <li class="flex-item" v-if="starships.previous">
+          <div class="paging" @click="getStarships(starships.previous.slice(-1))">
+@kcook236
+kcook236/stars – App.js
+Showing the top five matches
+Last indexed on Jul 10, 2018
+JavaScript
+    .then((data) => {
+      let starships = data.results
+      this.setState({starships:starships})
+    })
+  }
+
+  // RENDER
+    Map over this variable to access the values needed to render.
+    */
+    let battalion = this.state.vehicles
+    //battalion is an array for starships
+    let starships = battalion.map((starships) => {
+@m0rgi0n999
+m0rgi0n999/pcgen – futureequipment_weapons_ranged_starships.lst
+Showing the top four matches
+Last indexed on Jul 2, 2018
+Rail Cannon			PROFICIENCY:WEAPON|Rail Cannon		TYPE:Weapon.Ranged.Starship.Ballistic.PL6			COST:30	CRITMULT:x2	CRITRANGE:1	DAMAGE:6d12	RANGE:3000	SOURCEPAGE:FutureStarships	SPROP:Lic(+1)	RATEOFFIRE:Single
+
+###BLOCK:PL7 Starship Weapons
+# Equipment Name		Required Weapon Proficiency			Type								Cost		Crit Mult	Crit Range	Damage		Range		Source Page				Special Property	Rate of Fire
+Zero Bore			PROFICIENCY:WEAPON|Zero Bore			TYPE:Weapon.Ranged.Starship.Energy.PL8				COST:52	CRITMULT:x2	CRITRANGE:1	DAMAGE:16d8		RANGE:6000	SOURCEPAGE:FutureStarships	SPROP:Mil(+3)						RATEOFFIRE:Single
+
+###BLOCK:PL9 Starship Weapons
+@BasmaElmlyh
+BasmaElmlyh/WebComponent – Starships-v.html
+Showing the top three matches
+Last indexed on Jul 11, 2018
+HTML
+<link rel="import" href="../components/Starship-v.html">
+
+<dom-module id="starships-v">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <h1>Starships</h1>
+@vaughan99
+vaughan99/campaign – futureequipment_weapons_ranged_starships.lst
+Showing the top four matches
+Last indexed on Jun 30, 2018
+Rail Cannon			PROFICIENCY:WEAPON|Rail Cannon		TYPE:Weapon.Ranged.Starship.Ballistic.PL6			COST:30	CRITMULT:x2	CRITRANGE:1	DAMAGE:6d12	RANGE:3000	SOURCEPAGE:FutureStarships	SPROP:Lic(+1)	RATEOFFIRE:Single
+
+###BLOCK:PL7 Starship Weapons
+# Equipment Name		Required Weapon Proficiency			Type								Cost		Crit Mult	Crit Range	Damage		Range		Source Page				Special Property	Rate of Fire
+Zero Bore			PROFICIENCY:WEAPON|Zero Bore			TYPE:Weapon.Ranged.Starship.Energy.PL8				COST:52	CRITMULT:x2	CRITRANGE:1	DAMAGE:16d8		RANGE:6000	SOURCEPAGE:FutureStarships	SPROP:Mil(+3)						RATEOFFIRE:Single
+
+###BLOCK:PL9 Starship Weapons
+@kharrison7
+kharrison7/star-wars-react-app – App.js
+Showing the top three matches
+Last indexed on Jul 10, 2018
+JavaScript
+      vehicles: [],
+      starships: [],
+      people: [],
+      value: '',
+      pilot: ''
+      <div className="card">
+        <div className="card-block">
+          <h4 className="card-title">Starship: {starships.name}</h4>
+@PCGen
+PCGen/pcgen – futureequipment_weapons_ranged_starships.lst
+Showing the top four matches
+Last indexed on Jun 29, 2018
+Rail Cannon			PROFICIENCY:WEAPON|Rail Cannon		TYPE:Weapon.Ranged.Starship.Ballistic.PL6			COST:30	CRITMULT:x2	CRITRANGE:1	DAMAGE:6d12	RANGE:3000	SOURCEPAGE:FutureStarships	SPROP:Lic(+1)	FACT:RateOfFire|Single
+
+###BLOCK:PL7 Starship Weapons
+# Equipment Name		Required Weapon Proficiency			Type								Cost		Crit Mult	Crit Range	Damage		Range		Source Page				Special Property	FACT
+Quantum Cannon		PROFICIENCY:WEAPON|Quantum Cannon		TYPE:Weapon.Ranged.Starship.Energy.PL7		COST:41	CRITMULT:x2	CRITRANGE:1	DAMAGE:16d8		RANGE:6000	SOURCEPAGE:FutureStarships	SPROP:Res(+2)	FACT:RateOfFire|Single
+
+###BLOCK:PL8 Starship Weapons
+# Equipment Name		Required Weapon Proficiency			Type										Cost		Crit Mult	Crit Range	Damage		Range		Source Page				Special Property						FACT
+@jihadJaouani
+jihadJaouani/PolymerStarWars – my-pdetails.html
+Showing the top three matches
+Last indexed on Jul 11, 2018
+HTML
+      :host {
+        display: block;
+        padding: 20px;
+        margin: 30px;
+      }
+    
+      .films{    
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+      }
+      .starships{
+@aroni125
+aroni125/pcgen-svn – futureequipment_weapons_ranged_starships.lst
+Showing the top four matches
+Last indexed on Jun 25, 2018
+Quantum Cannon		PROFICIENCY:WEAPON|Quantum Cannon		TYPE:Weapon.Ranged.Starship.Energy.PL7		COST:41	CRITMULT:x2			CRITRANGE:1			DAMAGE:16d8		RANGE:6000	SOURCEPAGE:FutureStarships.rtf	SPROP:Res(+2)	RATEOFFIRE:Single
+
+###BLOCK:PL8 Starship Weapons
+Tachyon Gun			PROFICIENCY:WEAPON|Tachyon Gun		TYPE:Weapon.Ranged.Starship.Energy.PL9	COST:52	CRITMULT:x2			CRITRANGE:1			DAMAGE:14d8		RANGE:10000	SOURCEPAGE:FutureStarships.rtf	SPROP:Mil(+3)	RATEOFFIRE:Single
+
+###BLOCK: Mines
+# Equipment Name			Output Name				Type						Cost		Special Property
+@Jmales
+Jmales/SWAPI_LIB – index.html
+Showing the top two matches
+Last indexed on Jul 8, 2018
+HTML
+                console.log("%c" + "New Query", 'background: green; color: white; display: block;');
+                console.log(response);
+                console.log("%c" + "Failed Query", 'background: red; color: white; display: block;');
+                console.log("ERROR. " + error);
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
